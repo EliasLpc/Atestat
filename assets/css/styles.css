@@ -415,18 +415,208 @@ img {
 }
 /*=============== EXPLORE ===============*/
 
+.explore__container{
+  row-gap: 3rem;
+}
 
+.explore__data{
+  position: relative;
+
+}
+
+.explore__planet{
+  width: 50px;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+}
+
+.explore__description{
+  text-align: center;
+}
+
+.explore__info{
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+.explore__info-title{
+  font-size: var(--normal-font-size);
+}
+.explore__info-number{
+  font-size: var(--h1-font-size);
+  font-family: var(--second-font);
+  background: var(--second-gradient);
+  -webkit-background-clip:text;
+  color: transparent;
+}
+
+.explore__info-number span{
+  font-size: var(--small-font-size);
+}
+
+.explore__img{
+  width: 320px;
+  justify-content: center;
+}
 /*=============== HISTORY ===============*/
 
+.history{
+  position: relative;
+}
 
+.history__container{
+  position: relative;
+  row-gap: 2.5rem;
+  grid-template-columns: 265px;
+  justify-content: center;
+}
+
+.history__card{
+  text-align: center;
+}
+
+.history__img{
+  width: 150px;
+  margin: 0 auto .75rem;
+}
+
+.history__description span{
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.history__planet-1,
+.history__planet-2{
+  position: absolute;
+}
+
+.history__planet-1{
+  width: 250px;
+  top: 10rem;
+  left: -8rem;
+}
+
+.history__planet-2{
+  width: 150px;
+  right: -5rem;
+  bottom: 5rem;
+}
 /*=============== CONTACT ===============*/
 
+.contact__container{
+  padding-bottom: 2rem;
+}
+
+.contact__form{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.contact__input{
+  width: 100%;
+  background-color: var(--body-color);
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  color: var(--white-color);
+
+}
+
+.contact__form button{
+cursor: pointer;
+
+}
 
 /*=============== FOOTER ===============*/
 
+.footer{
+  overflow: hidden;
+}
 
+.footer__container{
+  position: relative;
+  row-gap: 4.5rem;
+  padding-block: 2rem;
+}
+
+.footer__planet-1,
+.footer__planet-2{
+  position: absolute;
+}
+
+.footer__planet-1{
+  width: 200px;
+  left: -6.5rem;
+  bottom: -4.5rem;
+}
+
+.footer__planet-2{
+  width: 50px;
+  top: 5.5rem;
+  right: 0;
+}
+
+.footer__content{
+  row-gap: 2.5rem;
+}
+
+.footer__links{
+  display: flex;
+  column-gap: 2rem;
+  justify-content: center;
+}
+
+.footer__link{
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.footer__link:hover{
+  color: var(--first-color);
+}
+
+.footer__social{
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer__social-link{
+  display: inline-flex;
+  background: var(--third-gradient);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  padding: .25rem;
+  transition: box-shadow .4s;
+}
+
+.footer__social-link:hover{
+  box-shadow: 0 8px 32px hsla(25,96%,55%,.9);
+}
+
+.footer__copy{
+  text-align: center;
+  z-index: var(--z-tooltip);
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+}
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: 0.6rem;
+  background-color: hsl(238, 60%, 20%);
+}
 
+::-webkit-scrollbar-thumb{
+
+  background-color: hsl(238, 50%, 30%);
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(238, 40%, 40%);
+  
+}
 
 /*=============== SCROLL UP ===============*/
 
@@ -437,8 +627,87 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
+@media screen and (max-width: 340px)
+{
+  .container{
+    margin-inline: 1rem;
+  }
+
+  .home__title{
+    font-size: 2.5rem;
+  }
+
+  .travel__container{
+    padding-inline: 1rem;
+  }
+
+  .explore__info{
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+  }
+
+}
 
 /* For medium devices */
 
+@media screen and (min-width: 540px)
+{
+  .home__container,
+  .explore__container{
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+
+  .travel__card{
+    width: 265px;
+  }
+}  
+
+@media screen and (min-width: 768px)
+{
+.home__container,
+.explore__container{
+  grid-template-columns: repeat(2, 350px);
+  align-items: center;
+}
+
+.home__data,
+.explore__data .section__title,
+.explore__description{
+  text-align: initial;
+}
+
+.explore__info{
+  justify-content: initial;
+}
+
+.explore__img{
+  order: -1;
+}
+
+.history__container{
+  grid-template-columns: repeat(2,265px);
+}
+
+}
+
 
 /* For large devices */
+
+@media screen and (min-width: 1150px)
+{
+  .container{
+    margin-inline: auto;
+  }
+
+  .section{
+    padding-block: 7rem 2rem;
+  }
+
+  .section__title{
+    margin-bottom: 3rem;
+  }
+
+  
+}
